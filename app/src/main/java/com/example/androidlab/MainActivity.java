@@ -1,5 +1,6 @@
 package com.example.androidlab;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,29 +10,31 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-Button obj;
-CalendarView cv1;
-//String a="";
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+Button exp1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        obj=findViewById(R.id.cal);
-        cv1=findViewById(R.id.cv);
-        //text=findViewById(R.id.text1);
-        obj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            long a=cv1.getDate();
-            long b=cv1.getFirstDayOfWeek();
-                Toast.makeText(MainActivity.this, String.valueOf(a)+" "+String.valueOf(b), Toast.LENGTH_SHORT).show();
-
-
-            }
-        });
+        exp1=findViewById(R.id.exp1);
+        exp1.setOnClickListener(this);
 
 
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.exp1:
+                Intent obj=new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(obj);
+                break;
+            case R.id.exp2:
+                startActivity(new Intent(this,Main2Activity.class));
+                default:
+                  break;
+        }
     }
 }
