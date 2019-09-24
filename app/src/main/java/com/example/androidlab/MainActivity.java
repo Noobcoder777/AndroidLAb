@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 Button obj;
@@ -23,6 +24,9 @@ CalendarView cv1;
             @Override
             public void onClick(View v) {
             long a=cv1.getDate();
+            long b=cv1.getFirstDayOfWeek();
+                Toast.makeText(MainActivity.this, String.valueOf(a)+" "+String.valueOf(b), Toast.LENGTH_SHORT).show();
+
 
             }
         });

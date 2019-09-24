@@ -26,7 +26,7 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="570dp" />
 
-    \
+
 
     <CalendarView
         android:id="@+id/cv"
